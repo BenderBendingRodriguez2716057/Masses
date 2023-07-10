@@ -1,1 +1,1 @@
-# Masses
+Hexlet masses
