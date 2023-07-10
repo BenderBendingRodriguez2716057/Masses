@@ -1,0 +1,21 @@
+Реализуйте функцию getSameParity, которая принимает на вход массив чисел и возвращает новый, состоящий из элементов, у которых такая же чётность, как и у первого элемента входного массива.
+
+
+function getSameParity($arr) {
+    if ( empty($arr)) {
+        return $arr;
+    }
+
+    $newArr1 = [];
+    $newArr2 = [];
+    $begin = $arr[0];
+   
+    foreach ($arr as $value) {
+        if ( $value % 2 === 0) {
+            $newArr2[] = $value;
+        } else {
+            $newArr1[] = $value;
+        }
+    }
+    return $begin % 2 === 0 ? $newArr2 : $newArr1;
+}
