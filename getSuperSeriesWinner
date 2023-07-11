@@ -1,0 +1,24 @@
+Реализуйте функцию getSuperSeriesWinner($scores), которая находит команду победителя для конкретной суперсерии. Победитель определяется как команда, у которой больше побед (не количество забитых шайб) в конкретной серии. Функция принимает на вход массив, в котором каждый элемент это массив, описывающий счет в конкретной игре (сколько шайб забила Канада и СССР). Результат функции – название страны: 'canada', 'ussr'. Если суперсерия закончилась в ничью, то нужно вернуть null.
+
+
+function getSuperSeriesWinner($scores) {
+    $canada = 0;
+    $ussr = 0;
+    $nothing = 0;
+    foreach  ( $scores as $game ) {
+        if ( $game[0] > $game[1] ) {
+            $canada += 1;
+        } elseif ( $game[0] < $game[1] ) {
+            $ussr += 1;
+        } else {
+            $nothing += 1;
+        }
+    }
+    if ( $canada > $ussr) {
+        return 'canada';
+    } elseif ( $canada < $ussr ) {
+        return 'ussr';
+    } else {
+        return null;
+    }
+}
