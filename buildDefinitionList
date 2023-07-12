@@ -1,0 +1,19 @@
+Реализуйте функцию buildDefinitionList, которая генерирует html список определений (теги dl, dt и dd) и возвращает получившуюся строку. При отсутствии элементов в массиве функция возвращает пустую строку.O
+
+
+function buildDefinitionList($arr) {
+    $result = [];
+
+    if ( empty($arr) ) {
+        $res = implode('', $result);
+        return '';
+    }
+
+    foreach ( $arr as $item ) {
+            $result[] = "<dt>{$item[0]}</dt><dd>{$item[1]}</dd>";
+    }
+
+    $result = implode('', $result);
+    $result = "<dl>{$result}</dl>";
+    return $result;
+}
