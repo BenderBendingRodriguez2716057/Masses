@@ -1,0 +1,12 @@
+Реализуйте функцию lengthOfLastWord, которая возвращает длину последнего слова переданной на вход строки. Словом считается любая последовательность, не содержащая пробелов.
+
+
+function lengthOfLastWord($str) {
+    $str = trim($str);
+    if ( $str === '') return 0;
+
+    $strExp = explode(' ', $str);
+    $lastWord = $strExp[count($strExp) - 1];
+    $res = strlen($lastWord);
+    return $res;
+}
