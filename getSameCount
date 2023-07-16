@@ -1,0 +1,18 @@
+Реализуйте функцию getSameCount(), которая считает количество общих уникальных элементов для двух массивов. Аргументы:
+
+Первый массив
+Второй массив
+
+
+
+function getSameCount($oneArr, $twoArr) {
+    $oneArr = array_unique($oneArr);
+    $twoArr = array_unique($twoArr);
+    $count = 0;
+    foreach ( $oneArr as $value ) {
+        if ( in_array($value, $twoArr) ) {
+            $count += 1;
+        }
+    }
+    return $count;
+}
