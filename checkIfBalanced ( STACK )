@@ -1,20 +1,20 @@
 Реализуйте функцию checkIfBalanced, которая проверяет балансировку круглых скобок в арифметических выражениях.
 
 
-function checkIfBalanced(string $expression): bool
+function checkIfBalanced(string $expression): bool                           
 {
-    $stack = [];
-    for ($i = 0, $length = strlen($expression); $i < $length; $i++) {
-        $curr = $expression[$i];
-        if ($curr === '(') {
+    $stack = [];                                                                 создание стека
+    for ($i = 0, $length = strlen($expression); $i < $length; $i++) {            проходим циклом по строке   
+        $curr = $expression[$i];                                                  
+        if ($curr === '(') {                                                     если есть открывающий символ - закидываем в стек 
             array_push($stack, $curr);
-        } elseif ($curr === ')') {
+        } elseif ($curr === ')') {                                               если идёт закрывающая скобка и при этом в стеке пусто, возвращаем фолс
             if (empty($stack)) {
                 return false;
             }
-            array_pop($stack);
+            array_pop($stack);                                                   если не пусто, извлекаем последний элемень из стека ( открывающую скобку)
         };
     }
 
-    return empty($stack);
+    return empty($stack);                                                        в итоге, если стек пустой, всё сходится и возвращаем тру
 }
