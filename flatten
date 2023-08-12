@@ -1,0 +1,17 @@
+Реализуйте функцию flatten(). Эта функция принимает на вход массив и выпрямляет его: если элементами массива являются массивы, то flatten() сводит всё к одному массиву, раскрывая один уровень вложенности.
+
+
+function flatten($arr) {
+    $res = [];
+    foreach ($arr as $value1) {
+        if ( is_array($value1) ) {
+            foreach ( $value1 as $value2 ) {
+                $res[] = $value2;
+            }
+        }
+        else {
+            $res[] = $value1;
+        }
+    }
+    return $res;
+}
