@@ -1,0 +1,21 @@
+Реализуйте функцию getIntersectionOfSortedArray, которая принимает на вход два отсортированных массива и находит их пересечение.
+
+
+function getIntersectionOfSortedArray($arr1, $arr2)
+{
+
+    if ( empty($arr1) || empty($arr2) ) {
+        return [];
+    }
+
+    $lenght1 = count($arr1);
+    $result = [];
+    for ( $i = 0; $i < $lenght1; $i++ ) {
+        $char1 = $arr1[$i];
+        if ( in_array($char1, $arr2) ) {
+            $result[] = $char1;
+        }
+    }
+    return $result;
+
+} 
